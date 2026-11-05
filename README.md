@@ -1,4 +1,4 @@
-# Nyilvattartas :3
+# Nyilvantartas :3
 
 Kedves teammatem az Erikecske :3
 

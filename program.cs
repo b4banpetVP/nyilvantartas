@@ -31,3 +31,4 @@ else if (tipus == 2)
     string rendszam = Console.ReadLine();
 
 }
+

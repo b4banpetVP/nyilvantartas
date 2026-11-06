@@ -12,24 +12,22 @@ int tipus = int.Parse(Console.ReadLine());
 
 
 Console.WriteLine();
-while(tipus!=1 && tipus != 2)
+while (tipus != 1 && tipus != 2)
 {
     Console.WriteLine("Helytelen szám, csak 1-est (Személy) vagy 2-es (autó) van nyilvántartásban.");
     Console.Write("Ember (1) vagy Autó (2) érkezett? ");
     tipus = int.Parse(Console.ReadLine());
-}   
+}
 
 Console.WriteLine();
 if (tipus == 1)
 {
     Console.Write("Adja meg a személy nevét: ");
-    string nev=Console.ReadLine();
+    string nev = Console.ReadLine();
     Console.Write("Adja meg a személyi azonosító számát: ");
-    string azon=Console.ReadLine();
-    string path = @"nyilvantartas.csv";
-
-    // StreamWriter használata
-    using (StreamWriter sw = new StreamWriter(path, false, Encoding.UTF8))
+    string azon = Console.ReadLine();
+    string path = "nyilvantartas.csv";
+    using (StreamWriter sw = new StreamWriter(path, true, Encoding.UTF8))
     {
         sw.WriteLine($"{most};{nev};{azon}");
     }
@@ -42,5 +40,12 @@ else if (tipus == 2)
     string autotipus = Console.ReadLine();
     Console.Write("Adja meg az autó rendszámát: ");
     string rendszam = Console.ReadLine();
+
+    string path = "nyilvantartas.csv";
+    using (StreamWriter sw = new StreamWriter(path, true, Encoding.UTF8))
+    {
+        sw.WriteLine($"{most};{autotipus};{rendszam}");
+    }
+
 
 }

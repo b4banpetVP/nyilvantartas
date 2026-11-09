@@ -1,12 +1,12 @@
-# Nyilvántartás
+# Nyilvántartási Rendszer
 A programunk célja a portai nyilvántartás segítése.
-Számon tartja az erkező személy/jármű fontos adatait.
+Számon tartja az érkező személy/jármű fontos adatait.
 
 A program egy főmenüvel indul, ahol 0, 1 vagy 2 adható meg, ha:
 
 - 0-át adunk meg, a program leáll,
 
-- 1-est adunk meg, akkor a nylvántartó (rögzítő) funkciót tudjuk elérni ennek menüjében:
+- 1-est adunk meg, akkor a nyilvántartó (rögzítő) funkciót tudjuk elérni ennek menüjében:
   * a program létrehoz egy "nyilvantartas.csv" nevű fáljt, és abba rőgzítjük az adatokat
   * 1-es megadásával személy adatai rögzíthetőek (Neve és személy azonosító okmány száma);
   * 2-es megadásával jármű adatai rögzíthetőek (Autó típusa és rendszáma);
@@ -17,4 +17,4 @@ A program egy főmenüvel indul, ahol 0, 1 vagy 2 adható meg, ha:
   * Ha a megadott adat nem szerepel a fáljban, kiírja hogy nem szerepel ilyen adat
   * Ha még nincs nyilvántartás, kiírja hogy nincs nyilvántartás és vissza dob a főmenübe
 
-Ha szöveget vagy rossz számot ad meg bármely menüpontnál, akkor a program azt jelzi
+Ha szöveget vagy rossz számot ad meg bármely menüpontnál, akkor a program azt jelzi, és újra bekéri az adatot

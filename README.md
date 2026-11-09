@@ -1,12 +1,12 @@
-# Nyilvantartas :3
+# Nyilvantartas
+A programunk célja a portai nyilvántartás segítése.
+Számon tartja az erkező személy/jármű fontos adatait.
 
-Kedves teammatem az Erikecske :3
-
-A legpremiumabb servicet nyujtjuk!!!
-
-Programunk szamon fogja tartani a teruletre erkezo jarmuvek es emberek leirasat.
-
-Eloszor a program kiirja az erkezes pontos idopontjat.
+A program egy főmenüvel indul, ahol 0, 1 vagy 2 adható meg, ha 
+- 0-át adunk meg, a program leáll
+- 1-est adunk meg, akkor a nylvántartó (rögzítő) funkciót tudjuk elérni;
+  ennek menüjében:
+  *1-es megadásával személy adatai rögzíthetőek (Neve és személy azonosító okmány száma)
 
 Ezutan bekeri, hogy szemely vagy auto erkezett.
 

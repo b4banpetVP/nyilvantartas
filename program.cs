@@ -6,11 +6,11 @@ Console.WriteLine("Nyilvántartási Rendszer");
 while (true)
 {
     Console.WriteLine();
-    Console.Write("Érkezőt rögzítessz (1), keresel (2) vagy kilépsz (0)? ");
+    Console.Write("Érkezőt rögzítesz (1), keresel (2) vagy kilépsz (0)? ");
     string valasztas = Console.ReadLine();
     if (int.TryParse(valasztas, out int value))
     {
-        int menu = int.Parse(valasztas);
+        int menu = value;
 
 
 
@@ -40,7 +40,7 @@ while (true)
                 if (int.TryParse(tipus_ie, out int value2))
                 {
                     //ellenorzes
-                    int tipus = int.Parse(tipus_ie);
+                    int tipus = value2;
                     if (tipus == 0)
                     {
                         break;
@@ -48,11 +48,19 @@ while (true)
                     //ellenorzes
 
                     //Rossz szam
-                    while (tipus != 1 && tipus != 2)
+                    while (tipus != 1 && tipus != 2 && tipus!=0)
                     {
                         Console.WriteLine("Helytelen szám, csak 1 (Személy) vagy 2 (autó) van nyilvántartásban.");
-                        Console.Write("Ember (1) vagy Autó (2) érkezett? ");
-                        tipus = int.Parse(Console.ReadLine());
+                        Console.Write("Ember (1) vagy Autó (2) érkezett vagy kilépsz (0)? ");
+                        string tipus_ie2=Console.ReadLine();
+                        if (int.TryParse(tipus_ie2, out int value3))
+                        {
+                            tipus = value3;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Szöveget nem adhatsz meg");
+                        }
                     }
                     string path = "nyilvantartas.csv";
                     //Rossz szam
@@ -61,11 +69,12 @@ while (true)
                     if (tipus == 1)
                     {
                         Console.Write("Adja meg a személy nevét: ");
-                        string nev = Console.ReadLine();
+                        string nev = Console.ReadLine().Replace(";", ",");
                         Console.Write("Adja meg a személyi azonosító számát: ");
-                        string azon = Console.ReadLine();
+                        string azon = Console.ReadLine().Replace(";", ",");
                         using (StreamWriter sw = new StreamWriter(path, true, Encoding.UTF8))
                             sw.WriteLine($"{most};{nev};{azon};személy");
+                        Console.WriteLine("Rögzítve.");
                     }
                     //ember
 
@@ -73,13 +82,19 @@ while (true)
                     else if (tipus == 2)
                     {
                         Console.Write("Adja meg az autó típusát: ");
-                        string autotipus = Console.ReadLine();
+                        string autotipus = Console.ReadLine().Replace(";", ",");
                         Console.Write("Adja meg az autó rendszámát: ");
-                        string rendszam = Console.ReadLine();
+                        string rendszam = Console.ReadLine().Replace(";", ",");
                         using (StreamWriter sw = new StreamWriter(path, true, Encoding.UTF8))
                             sw.WriteLine($"{most};{autotipus};{rendszam};jármű");
+                        Console.WriteLine("Rögzítve.");
                     }
                     //jarmu
+
+                    else if (tipus == 0)
+                    {
+                        break;
+                    }
 
                 }
                 //str int helyett
@@ -91,9 +106,8 @@ while (true)
         else if (menu == 2)
         {
             if (File.Exists("nyilvantartas.csv"))
-            {
+            {   Console.WriteLine();
                 Console.WriteLine("Keresés");
-                Console.WriteLine();
                 Console.Write("Adjon meg egy információt: ");
                 string info = Console.ReadLine();
                 string inform = info.ToLower();
@@ -111,7 +125,7 @@ while (true)
 
                 if (!benne)
                 {
-                    Console.WriteLine("Nincs rögzitve ilyen információ!");
+                    Console.WriteLine("Nincs rögzítve ilyen információ!");
                 }
             }
             else

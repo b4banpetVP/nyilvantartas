@@ -1,4 +1,4 @@
-# Nyilvantartas
+# Nyilvántartás
 A programunk célja a portai nyilvántartás segítése.
 Számon tartja az erkező személy/jármű fontos adatait.
 

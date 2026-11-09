@@ -65,7 +65,7 @@ while (true)
                         Console.Write("Adja meg a személyi azonosító számát: ");
                         string azon = Console.ReadLine();
                         using (StreamWriter sw = new StreamWriter(path, true, Encoding.UTF8))
-                            sw.WriteLine($"{most};{nev};{azon}személy");
+                            sw.WriteLine($"{most};{nev};{azon};személy");
                     }
                     //ember
 

@@ -65,7 +65,7 @@ while (true)
                                 Console.Write("Adja meg a személyi azonosító számát: ");
                                 string azon = Console.ReadLine();
                                 using (StreamWriter sw = new StreamWriter(path, true, Encoding.UTF8))
-                                    sw.WriteLine($"{most};{nev};{azon},személy");
+                                    sw.WriteLine($"{most};{nev};{azon};személy");
                             }
                         //ember
 
@@ -96,13 +96,15 @@ while (true)
                     Console.WriteLine();
                     Console.WriteLine("Adjon meg egy információt: ");
                     string info = Console.ReadLine();
+                    string inform = info.ToLower(); 
 
                 //benne van-e?
                     bool benne = false;
                     string josor = "" ;
                         foreach (string sor in File.ReadLines("nyilvantartas.csv"))
                         {
-                            if (sor.Contains(info))
+                            string sorlower = sor.ToLower();
+                            if (sorlower.Contains(inform))
                             {
                                 benne = true;
                                 josor += sor;
